@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Student List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Information Table</h1>
+
+        <a class="btn btn-add">Add Student</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>StudentCode</th>
+                    <th>Phone</th>
+                    <th>StudentYear</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="student : ${studentList}">
+                    <td th:text="${student.id}"></td>
+                    <td th:text="${student.firstname}"></td>
+                    <td th:text="${student.lastname}"></td>
+                    <td th:text="${student.studentCode}"></td>
+                    <td th:text="${student.phone}"></td>
+                    <td th:text="${student.studentYear}"></td>
+                    <td>
+                        <a href="#" class="btn btn-edit">Edit</a>
+                        <a href="#" class="btn btn-delete">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
