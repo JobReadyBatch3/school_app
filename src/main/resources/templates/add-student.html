@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Add Student</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add Student Form</h1>
+        <form action="/create" method="post">
+
+            <input type="hidden" name="id" th:value="${student.id}">
+            <div>
+                <label for="firstname">FirstName</label>
+                <input type="text" name="firstname" id="firstname" th:value="${student.firstname}" required>
+            </div>  
+            <div>
+                <label for="lastname">LastName</label>
+                <input type="text" name="lastname" id="lastname" th:value="${student.lastname}" required>
+            </div> 
+            <div>
+                <label for="studentCode">StudentCode</label>
+                <input type="text" name="studentCode" id="studentCode" th:value="${student.studentCode}" required>
+            </div> 
+            <div>
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" th:value="${student.phone}" required>
+            </div> 
+            <div>
+                <label for="studentYear">StudentYear</label>
+                <select id="studentYear" name="studentYear">
+                    <option value="1" th:selected="${student.studentYear == 1}">First Year</option>
+                    <option value="2" th:selected="${student.studentYear == 2}">Second Year</option>
+                    <option value="3" th:selected="${student.studentYear == 3}">Third Year</option>
+                    <option value="4" th:selected="${student.studentYear == 4}">Fourth Year</option>
+                    <option value="5" th:selected="${student.studentYear == 5}">Fifth Year</option>
+                    <option value="6" th:selected="${student.studentYear == 6}">Sixth Year</option>
+                </select>
+            </div> 
+
+            <div>
+                <input type="submit" value="Create">
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

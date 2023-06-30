@@ -24,4 +24,37 @@ thead{
     background-color: crimson;
     color: white;
 }
+.btn-add{
+	width: 150px;
+	height: 40px;
+	background-color: blue;
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: block;
+	text-align: center;
+}
+
+.btn-edit{
+	width: 80px;
+	height: 40px;
+	background-color: grey;
+	color: white;
+	text-decoration: none;
+	font-size: 15px;
+	margin : 5px;
+}
+
+.btn-delete{
+	width: 80px;
+	height: 40px;
+	background-color: red;
+	color: white;
+	text-decoration: none;
+	font-size: 15px;
+	margin : 5px;
+}
+
 
