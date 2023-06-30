@@ -1,9 +1,13 @@
 package com.hostmdy.school.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -20,6 +24,9 @@ public class Student {
 	
 	@ManyToOne
 	private Major major;
+	
+	@ManyToMany(mappedBy = "students")
+	private List<Teacher> teachers = new ArrayList<>();
 	
 	public Student() {}
 
@@ -88,6 +95,26 @@ public class Student {
 
 	public void setStudentYear(Integer studentYear) {
 		this.studentYear = studentYear;
+	}
+	
+	
+
+	public Major getMajor() {
+		return major;
+	}
+
+	public void setMajor(Major major) {
+		this.major = major;
+	}
+	
+	
+
+	public List<Teacher> getTeachers() {
+		return teachers;
+	}
+
+	public void setTeachers(List<Teacher> teachers) {
+		this.teachers = teachers;
 	}
 
 	@Override
